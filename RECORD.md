@@ -34,3 +34,4 @@ module.exports = vuxLoader.merge(webpackConfig, {
 })
 ```
 
+#7.
