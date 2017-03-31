@@ -11,7 +11,7 @@
 <style lang="less">
   body {
     /*
-      Unable to preventDefault inside passive event listener due to target being treated as passive.
+      unable to preventdefault inside passive event listener due to target being treated as passive.
       一个禁止点击按钮默认事件引发的警告，相关文章
       https://segmentfault.com/a/1190000008512184
     */

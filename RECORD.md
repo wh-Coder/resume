@@ -60,3 +60,4 @@ Vue.use(AlertPlugin)
 
 ```$ npm install vue-touch@next```
 
+#11.
