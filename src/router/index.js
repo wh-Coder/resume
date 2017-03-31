@@ -5,12 +5,13 @@ import Test from '@/components/test'
 import Home from '@/components/home'
 // import User from '@/components/user'
 import Detail from '@/components/detail'
-import Swiper from '@/components/swiper'
+// import Swiper from '@/components/swiper'
 import Geometry from '@/components/geometry'
 import Animate from '@/components/animate'
 
 // 懒加载的一种方式
 const User = resolve => require(['@/components/user'], resolve)
+const Swiper = resolve => require(['@/components/swiper'], resolve)
 
 Vue.use(Router)
 
