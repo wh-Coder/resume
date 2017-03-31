@@ -49,3 +49,10 @@ Vue.use(AlertPlugin)
 ```https://icomoon.io/```
 
 下载的到fonts包和icon.css调用文件，引入即可用
+
+
+#9. 引入animate.css
+
+```$ npm install -S animate.css```
+
+

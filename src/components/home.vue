@@ -2,9 +2,13 @@
   <div>
     <h1>home -> {{count+1}}</h1>
     <hr/>
-    <div @click="onGotoGiftPage">点我跳转 => 详情页</div>
+    <div @click="onGotoGiftPage">detail</div>
     <hr/>
     <router-link to="/swiper">swpier</router-link>
+    <hr/>
+    <router-link to="/geometry">geometry</router-link>
+    <hr/>
+    <router-link to="/animate">animate</router-link>
   </div>
 </template>
 

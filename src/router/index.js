@@ -6,6 +6,8 @@ import Home from '@/components/home'
 import User from '@/components/user'
 import Detail from '@/components/detail'
 import Swiper from '@/components/swiper'
+import Geometry from '@/components/geometry'
+import Animate from '@/components/animate'
 
 Vue.use(Router)
 
@@ -25,5 +27,7 @@ export default new Router({
     },
     {path: '/detail', component: Detail},
     {path: '/swiper', component: Swiper},
+    {path: '/geometry', component: Geometry},
+    {path: '/animate', component: Animate},
   ]
 })
