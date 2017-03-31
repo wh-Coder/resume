@@ -1,27 +1,29 @@
 <template lang="html">
   <div>
-    <h1>test -> {{count}}</h1>
-    <input type="button" value="increase" @click="increase"/>
-    <input type="button" value="decrease" @click="decrease"/>
+    <h1>home -> {{count+1}}</h1>
+    <hr/>
+    <div @click="onGotoGiftPage">点我跳转 => 详情页</div>
+    <hr/>
+    <router-link to="/swiper">swpier</router-link>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  import {mapMutations, mapGetters} from 'vuex'
+  import {mapGetters} from 'vuex'
   export default {
     data() {
       return {};
     },
     components: {},
-    methods: {
-      ...mapMutations([
-        'increase', 'decrease'
-      ])
-    },
     computed: {
       ...mapGetters([
         'count'
       ])
+    },
+    methods: {
+      onGotoGiftPage(){
+        this.$router.push('/detail')
+      }
     }
   };
 </script>

@@ -9,15 +9,15 @@ export default new Vuex.Store({
     count: 0
   },
   mutations: {
-    addCount(state) {
+    increase(state) {
       state.count++;
     },
-    subtract(state) {
+    decrease(state) {
       state.count--;
     }
   },
   getters: {
-    myCount: state => {
+    count: state => {
       return state.count;
     }
   }

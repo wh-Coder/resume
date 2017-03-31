@@ -6,6 +6,11 @@ import router from './router'
 import store from './store'
 
 
+const FastClick = require('fastclick')
+FastClick.attach(document.body)
+
+import '@/common/stylus/index.styl';
+
 import  { AlertPlugin } from 'vux'
 Vue.use(AlertPlugin)
 
@@ -13,9 +18,16 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
   store,
   router,
-  template: '<App/>',
-  components: { App }
-})
+  render: h => h(App)
+}).$mount('#app')
+
+// vue-cli 脚手架写法
+// new Vue({
+//   el: '#app',
+//   router,
+//   store,
+//   template: '<App/>',
+//   components: { App }
+// })
