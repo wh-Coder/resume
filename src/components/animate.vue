@@ -1,10 +1,15 @@
 <template lang="html">
   <div class="vue-animate">
-    <input type="button" value="animate" @click="demoA=!demoA"/>
-    <transition enter-active-class="bounceInLeft" leave-active-class="bounceOutRight" appear>
+    <transition enter-active-class="bounceInLeft" leave-active-class="bounceOutRight" appear
+                @after-leave="onAfterLeave">
       <div class="animated box" v-show="demoA"></div>
     </transition>
+    <input type="button" value="animate" @click="demoA=!demoA"/>
     <hr/>
+    <v-touch @swipeleft="onSwipeLeft" @swiperight="onSwipeRight">
+      <div class="box">{{touchWord}}</div>
+    </v-touch>
+
   </div>
 </template>
 
@@ -12,10 +17,22 @@
   export default {
     data() {
       return {
-        demoA: true
+        demoA: true,
+        touchWord: '测试：左/右滑'
       };
     },
-    components: {}
+    components: {},
+    methods: {
+      onAfterLeave(){
+        alert('animate leave end');
+      },
+      onSwipeLeft(){
+        this.touchWord = 'left'
+      },
+      onSwipeRight(){
+        this.touchWord = 'right'
+      }
+    }
   };
 </script>
 
@@ -23,7 +40,7 @@
   .vue-animate
     .box
       margin: 0 auto
-      width: 100px
+      width: 200px
       height: 100px
       background: red
 </style>

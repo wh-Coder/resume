@@ -10,9 +10,14 @@ const FastClick = require('fastclick')
 FastClick.attach(document.body)
 
 import '@/common/stylus/index.styl';
+import '~/vux/src/styles/reset.less';
+import '~/animate.css/animate.css';
 
-import  { AlertPlugin } from 'vux'
+import  {AlertPlugin} from 'vux'
 Vue.use(AlertPlugin)
+
+import VueTouch from 'vue-touch'
+Vue.use(VueTouch, {name: 'v-touch'})
 
 Vue.config.productionTip = false
 

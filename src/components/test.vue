@@ -15,8 +15,15 @@
     components: {},
     methods: {
       ...mapMutations([
-        'increase', 'decrease'
-      ])
+        'increase'
+      ]),
+      decrease(){
+        this.$store.commit('decrease');
+        this.$vux.alert.show({
+          title: 'Vux is Cool',
+          content: 'Do you agree?'
+        })
+      }
     },
     computed: {
       ...mapGetters([

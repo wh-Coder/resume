@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-    <h1>home -> {{count+1}}</h1>
+    <h1>home -> {{count | rmb}}</h1>
     <hr/>
     <div @click="onGotoGiftPage">detail</div>
     <hr/>
@@ -27,6 +27,11 @@
     methods: {
       onGotoGiftPage(){
         this.$router.push('/detail')
+      }
+    },
+    filters: {
+      rmb(value){
+        return '￥' + value.toFixed(2);
       }
     }
   };

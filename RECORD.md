@@ -56,3 +56,7 @@ Vue.use(AlertPlugin)
 ```$ npm install -S animate.css```
 
 
+#10. 引入vue-touch插件
+
+```$ npm install vue-touch@next```
+

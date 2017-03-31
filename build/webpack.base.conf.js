@@ -3,6 +3,7 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 var vuxLoader = require('vux-loader')
+// 返回一个绝对路径
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -20,9 +21,11 @@ let webpackConfig = {
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
+    // 别名
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      '~': resolve('node_modules')
     }
   },
   module: {
@@ -56,7 +59,7 @@ let webpackConfig = {
     ]
   }
 }
-
+// vux官方指导的安装方式
 module.exports = vuxLoader.merge(webpackConfig, {
   plugins: ['vux-ui', 'progress-bar', 'duplicate-style']
 })

@@ -9,8 +9,6 @@
 </script>
 
 <style lang="less">
-  @import '~vux/src/styles/reset.less';
-  @import '~animate.css/animate.css';
   body {
     /*
       Unable to preventDefault inside passive event listener due to target being treated as passive.
