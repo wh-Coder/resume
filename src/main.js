@@ -21,6 +21,10 @@ Vue.use(VueTouch, {name: 'v-touch'})
 
 Vue.config.productionTip = false
 
+import './plugin/toast.css';
+import Toast from './plugin/toast';
+Vue.use(Toast);
+
 /* eslint-disable no-new */
 new Vue({
   store,

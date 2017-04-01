@@ -3,11 +3,12 @@ import Router from 'vue-router'
 import Tabs from '@/components/tabs'
 import Test from '@/components/test'
 import Home from '@/components/home'
-// import User from '@/components/user'
 import Detail from '@/components/detail'
-// import Swiper from '@/components/swiper'
 import Geometry from '@/components/geometry'
 import Animate from '@/components/animate'
+// import User from '@/components/user'
+// import Swiper from '@/components/swiper'
+
 
 // 懒加载的一种方式
 const User = resolve => require(['@/components/user'], resolve)
@@ -18,7 +19,6 @@ Vue.use(Router)
 export default new Router({
   linkActiveClass: 'active',
   routes: [
-    {path: '/', redirect: '/tabs/home'},
     {
       path: '/tabs', component: Tabs,
       children: [
@@ -33,5 +33,7 @@ export default new Router({
     {path: '/swiper', component: Swiper},
     {path: '/geometry', component: Geometry},
     {path: '/animate', component: Animate},
+    // 这个任意（其他）地址居然还和位置有关系
+    {path: '*', redirect: '/tabs/home'}
   ]
 })
