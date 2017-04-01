@@ -24,6 +24,9 @@ Vue.config.productionTip = false
 import './plugin/toast.css';
 import Toast from './plugin/toast';
 Vue.use(Toast);
+import plugin from './plugin/who'
+Vue.use(plugin);
+
 
 /* eslint-disable no-new */
 new Vue({

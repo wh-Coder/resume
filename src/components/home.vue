@@ -19,6 +19,10 @@
       return {};
     },
     components: {},
+    mounted(){
+      this.$who.get('Vue Instance')
+      this.who('Global Vue')
+    },
     computed: {
       ...mapGetters([
         'count'

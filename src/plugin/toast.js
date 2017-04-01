@@ -1,6 +1,7 @@
 /**
  * Created by Administrator on 2017-04-01.
  */
+
 var Toast = {};
 Toast.install = function (Vue, options) {
   var opt = {
@@ -50,7 +51,7 @@ Toast.install = function (Vue, options) {
               <div class="lx-loading">
                 <div class="loading_leaf loading_leaf_0"></div>
                 <div class="loading_leaf loading_leaf_1"></div>
-                <div class="loading_leaf loading_leaf_2"></div>
+                <div class="loading_leaf loading_leaf_"></div>
                 <div class="loading_leaf loading_leaf_3"></div>
                 <div class="loading_leaf loading_leaf_4"></div>
                 <div class="loading_leaf loading_leaf_5"></div>
