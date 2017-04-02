@@ -24,10 +24,26 @@ module.exports = {
   dev: {
     env: require('./dev.env'),
     port: 8080,
-    autoOpenBrowser: true,
+    // autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/handle': {
+        target: 'http://wx.100xuexi.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^handle': 'handle'
+        }
+
+        // !!!注意:这里不能用'app'开头
+        // '/AppEbookQuery': {
+        //   target: 'http://app.100xuexi.com/app',
+        //   changeOrigin: true,
+        //   pathRewrite: {
+        //     '^AppEbookQuery': 'AppEbookQuery'
+        //   }
+      }
+    },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)

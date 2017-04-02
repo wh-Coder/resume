@@ -1,8 +1,10 @@
 <template lang="html">
   <div>
-    <scroller height="-48" lock-x>
+    <scroller height="-48" lock-x ref="scroller">
       <div>
-        <h1 v-for="(item,index) in 50">User{{index}}</h1>
+        <h1 v-for="(item,index) in list">{{index}} => {{item.name}}
+          <hr/>
+        </h1>
         <button @click="openTop()">top</button>
         <button @click="openCenter()">center</button>
         <button @click="openBottom()">bottom</button>
@@ -18,9 +20,26 @@
   import {Scroller} from 'vux'
   export default {
     data() {
-      return {};
+      return {
+        list: []
+      };
     },
     components: {Scroller},
+    mounted() {
+      this.$http.get('http://wx.100xuexi.com/handle/userAccountHandler.ashx?method=GetCollection&PageSize=10&pageIndex=0&userid=230058')
+        .then((response) => {
+          console.log('直接请求服务器')
+          console.log(response);
+        })
+      this.$http.get('/handle/userAccountHandler.ashx?method=GetCollection&PageSize=10&pageIndex=0&userid=230058')
+        .then((response) => {
+          console.log('反向代理')
+          this.list = response.body.book.item
+          this.$nextTick(() => {
+            this.$refs.scroller.reset()
+          })
+        })
+    },
     methods: {
       openTop(){
         this.$toast.top('top');

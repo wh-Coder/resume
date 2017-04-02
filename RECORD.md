@@ -60,4 +60,7 @@ Vue.use(AlertPlugin)
 
 ```$ npm install vue-touch@next```
 
-#11.
+#11. 学习配置反向代理,同时引入vue-resource
+
+```$ npm install vue-resource```
+
