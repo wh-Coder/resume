@@ -9,16 +9,27 @@
     <router-link to="/geometry">geometry</router-link>
     <hr/>
     <router-link to="/animate">animate</router-link>
+    <hr/>
+    <!--<snake :color="'#ccc'"></snake>-->
+    <hr/>
+    <!--<double-bounce></double-bounce>-->
+    <hr/>
+    <!--<spinner :type='1' color='blue'></spinner>-->
+    <spinner :type="'double-bounce'" color="#000" :size="10"></spinner>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+  import snake from './spinner/src/snake.vue'
+  import doubleBounce from './spinner/src/double-bounce.vue'
+  import Spinner from './spinner/spinner.vue'
+
   import {mapGetters} from 'vuex'
   export default {
     data() {
       return {};
     },
-    components: {},
+    components: {snake,doubleBounce,Spinner},
     mounted(){
       this.$who.get('Vue Instance')
       this.who('Global Vue')
