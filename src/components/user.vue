@@ -30,11 +30,11 @@
         this.$http.get('http://wx.100xuexi.com/handle/userAccountHandler.ashx?method=GetCollection&PageSize=10&pageIndex=0&userid=230058')
           .then((response) => {
             console.log('直接请求服务器')
-            console.log(response);
           })
         this.$http.get('/handle/userAccountHandler.ashx?method=GetCollection&PageSize=10&pageIndex=0&userid=230058')
           .then((response) => {
             console.log('反向代理')
+            console.log(response)
             this.list = response.body.book.item
             this.$nextTick(() => {
               this.$refs.scroller.reset()

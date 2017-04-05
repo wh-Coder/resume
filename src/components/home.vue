@@ -15,7 +15,7 @@
     <!--<double-bounce></double-bounce>-->
     <hr/>
     <!--<spinner :type='1' color='blue'></spinner>-->
-    <spinner :type="'double-bounce'" color="#000" :size="10"></spinner>
+    <spinner :type="'snake'" color="#000" :size="10"></spinner>
   </div>
 </template>
 
@@ -33,6 +33,7 @@
     mounted(){
       this.$who.get('Vue Instance')
       this.who('Global Vue')
+      console.log(this.$who)
     },
     computed: {
       ...mapGetters([

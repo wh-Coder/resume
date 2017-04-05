@@ -16,11 +16,12 @@ plugin.install = function(Vue) {
       }
     }
   });
-  Vue.mixin({
-    mounted: function () {
-      console.log('Plugin activiated')
-    }
-  })
+  // 谨慎使用
+  // Vue.mixin({
+  //   mounted: function () {
+  //     console.log('Plugin activiated')
+  //   }
+  // })
 };
 
 export default plugin;
