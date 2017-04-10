@@ -12,3 +12,10 @@ export const userAccount = userid => axios.get('/handle/userAccountHandler.ashx'
   }
 })
 
+export const getGiftCategory = () => axios.get('/BookGift/Gift.ashx?method=GetGiftCategory')
+
+export const getGifts = (categoryId) => axios.get('/BookGift/Gift.ashx?method=GetGifts', {
+  params: {
+    categoryId
+  }
+})

@@ -1,5 +1,8 @@
 <template lang="html">
   <div class="vue-gift">
+    <transition name="mask">
+      <div class="mask" v-show="isShowPresent2"></div>
+    </transition>
     <ul class="tab">
       <li class="tab-receive" @click="onToggleReceive">
         <span class="icon" :class="isShowReceive?'icon-circle-up':'icon-circle-down'"></span>已收礼物(12)
@@ -12,7 +15,7 @@
       <div class="present" v-if="isShowPresent1" v-show="isShowPresent2">
         <scroller lock-y :scrollbar-x=false>
           <div class="present-title">
-            <span class="title-item" v-for="(item,index) in 10">我是item{{index}}</span>
+            <span class="title-item" v-for="(item,index) in giftCategory">{{item.Name}}</span>
           </div>
         </scroller>
         <swiper class="present-content" height="100%" dots-position="center">
@@ -34,15 +37,24 @@
 
 <script type="text/ecmascript-6">
   import {Swiper, SwiperItem, Scroller} from 'vux'
+  import {getGiftCategory,getGifts} from '@/service/getData'
   export default {
     data() {
       return {
         isShowReceive: true,
         isShowPresent1: false,
-        isShowPresent2: true
+        isShowPresent2: true,
+        giftCategory: [],
+        categoryId: 1
       };
     },
     components: {Swiper, SwiperItem, Scroller},
+    async beforeMount() {
+      let respponse = await getGiftCategory()
+      this.giftCategory = respponse.data.list
+      let res = await getGifts(this.categoryId)
+      console.log(res)
+    },
     methods: {
       onToggleReceive(){
         this.isShowReceive = !this.isShowReceive;
@@ -60,6 +72,21 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   .vue-gift
+    .mask
+      background: #000000;
+      position: fixed;
+      left: 0
+      bottom: 0
+      right: 0
+      z-index: 1600;
+      opacity: 0.5;
+      width: 100%;
+      height: 100%;
+    .mask-enter-active, .mask-leave-active
+      transition: all .5s ease
+      opacity: .5
+    .mask-enter, .mask-leave-active
+      opacity: 0
     .tab
       height: 40px;
       width: 100%;
@@ -101,19 +128,17 @@
       left: 0
       width: 100%
       bottom: 0
-      background: mediumvioletred
       z-index: 1900;
+      background: #ffffff
       .present-title
-        display:inline-block
+        display: inline-block
         height: 40px;
         line-height: 40px;
         padding: 0 8px;
         white-space: nowrap;
-        background darkolivegreen
         .title-item
-          display:inline-block
-          margin: 4px 8px
-          background: #ccc
+          display: inline-block
+          margin: 0px 8px
       .present-content
         background: blueviolet;
         padding: 10px 0;

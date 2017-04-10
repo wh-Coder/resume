@@ -27,8 +27,8 @@
       };
     },
     components: {Scroller},
-    async created() {
-      var response = await userAccount(this.userid)
+    async beforeMount() {
+      let response = await userAccount(this.userid)
       this.list = response.data.book.item
       this.$nextTick(() => {
         this.$refs.scroller.reset()

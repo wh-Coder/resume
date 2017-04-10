@@ -34,7 +34,6 @@ module.exports = {
         pathRewrite: {
           '^handle': 'handle'
         }
-
         // !!!注意:这里不能用'app'开头
         // '/AppEbookQuery': {
         //   target: 'http://app.100xuexi.com/app',
@@ -42,6 +41,13 @@ module.exports = {
         //   pathRewrite: {
         //     '^AppEbookQuery': 'AppEbookQuery'
         //   }
+      },
+      '/BookGift': {
+        target: 'http://service.100eshu.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^BookGift': 'BookGift'
+        }
       }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
