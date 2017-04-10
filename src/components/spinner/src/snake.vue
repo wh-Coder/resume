@@ -9,20 +9,22 @@
   </div>
 </template>
 <script>
-  export default {
-    computed: {
-      spinnerColor () {
-        return this.color || this.$parent.color || 'red'
-      },
-      spinnerSize () {
-        return (this.size || this.$parent.size || 20) + 'px'
-      }
-    },
-    props: {
-      color: String,
-      size: Number
-    }
-  }
+//  export default {
+//    computed: {
+//      spinnerColor () {
+//        return this.color || this.$parent.color || 'red'
+//      },
+//      spinnerSize () {
+//        return (this.size || this.$parent.size || 20) + 'px'
+//      }
+//    },
+//    props: {
+//      color: String,
+//      size: Number
+//    }
+//  }
+import common from './common'
+export default Object.assign({}, {name: 'snake'}, common);
 </script>
 <style>
   .snake {

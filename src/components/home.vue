@@ -10,9 +10,10 @@
     <hr/>
     <router-link to="/animate">animate</router-link>
     <hr/>
-    <!--<snake :color="'#ccc'"></snake>-->
+    <snake :color="'#ccc'"></snake>
     <hr/>
-    <!--<double-bounce></double-bounce>-->
+    <br/>
+    <double-bounce></double-bounce>
     <hr/>
     <!--<spinner :type='1' color='blue'></spinner>-->
     <spinner :type="'snake'" color="#000" :size="10"></spinner>
@@ -29,7 +30,7 @@
     data() {
       return {};
     },
-    components: {snake,doubleBounce,Spinner},
+    components: {snake, doubleBounce, Spinner},
     mounted(){
       this.$who.get('Vue Instance')
       this.who('Global Vue')

@@ -45,3 +45,12 @@ new Vue({
 //   template: '<App/>',
 //   components: { App }
 // })
+
+/*
+  这是一个测试，关于export和export default
+ */
+import {f} from './config/export-test'
+import str from  './config/export-test'
+console.log(str)
+console.log(f);
+// console.log(process.env.NODE_ENV)
