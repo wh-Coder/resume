@@ -4,9 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
-import resource from 'vue-resource'
-
-Vue.use(resource)
 
 const FastClick = require('fastclick')
 FastClick.attach(document.body)
