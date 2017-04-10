@@ -27,16 +27,12 @@
       };
     },
     components: {Scroller},
-    created() {
-      if (!this.list.length) {
-        userAccount(this.userid)
-          .then((response) => {
-            this.list = response.data.book.item
-            this.$nextTick(() => {
-              this.$refs.scroller.reset()
-            })
-          })
-      }
+    async created() {
+      var response = await userAccount(this.userid)
+      this.list = response.data.book.item
+      this.$nextTick(() => {
+        this.$refs.scroller.reset()
+      })
     },
     methods: {
       openTop(){

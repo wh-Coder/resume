@@ -3,13 +3,12 @@
  */
 import axios from 'axios'
 
-export const userAccount = userid => {
-  return axios.get('/handle/userAccountHandler.ashx',{
-    params: {
-      method: 'GetCollection',
-      PageSize: 10,
-      pageIndex: 0,
-      userid
-    }
-  })
-}
+export const userAccount = userid => axios.get('/handle/userAccountHandler.ashx', {
+  params: {
+    method: 'GetCollection',
+    PageSize: 10,
+    pageIndex: 0,
+    userid
+  }
+})
+
