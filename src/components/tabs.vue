@@ -18,7 +18,7 @@
           {path: '/tabs/home', title: '首页', icon: 'icon-home3'},
           {path: '/tabs/test1', title: '电子书', icon: 'icon-books'},
           {path: '/tabs/test2', title: '我要出书', icon: 'icon-book'},
-          {path: '/tabs/test3', title: '发现', icon: 'icon-sphere'},
+          {path: '/tabs/rotate', title: '发现', icon: 'icon-sphere'},
           {path: '/tabs/user', title: '我', icon: 'icon-user'},
         ]
       };

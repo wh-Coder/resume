@@ -8,7 +8,7 @@
     'double-bounce'
   ]
   const parseSpinner = function (index) {
-    if ({}.toString.call(index) == '[object Number]') {
+    if ({}.toString.call(index) === '[object Number]') {
       if (index >= SPINNERS.length) {
         console.warn(`'${index}' spinner not found, use the default spinner.`);
         index = 0   //第二段

@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-    <scroller height="-48" lock-x ref="scroller">
+    <scroller lock-x ref="scroller">
       <div>
         <h1 v-for="(item,index) in list">{{index}} => {{item.name}}
           <hr/>
