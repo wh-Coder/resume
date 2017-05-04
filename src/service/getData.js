@@ -19,3 +19,10 @@ export const getGifts = (categoryId) => axios.get('/BookGift/Gift.ashx?method=Ge
     categoryId
   }
 })
+
+export const tkHandle = (questionPlanID) => axios.get('/handle/tkHandle.ashx', {
+  params: {
+    mtype: 'GetMenu',
+    questionPlanID: 3088
+  }
+})

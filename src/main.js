@@ -48,6 +48,6 @@ new Vue({
  */
 import {f} from './config/export-test'
 import str from  './config/export-test'
-console.log(str)
-console.log(f);
+// console.log(str)
+// console.log(f);
 // console.log(process.env.NODE_ENV)

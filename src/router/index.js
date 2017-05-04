@@ -14,7 +14,7 @@ import Rotate from '@/components/rotate'
 // 懒加载的一种方式
 const User = resolve => require(['@/components/user'], resolve)
 const Swiper = resolve => require(['@/components/swiper'], resolve)
-const tk = resolve => require(['@/components/tk'], resolve)
+const tk = resolve => require(['@/tk/tk'], resolve)
 
 Vue.use(Router)
 
@@ -35,7 +35,7 @@ export const router = new Router({
     {path: '/swiper', component: Swiper, meta: {title: 'swiper'}},
     {path: '/geometry', component: Geometry, meta: {title: 'geometry'}},
     {path: '/animate', component: Animate, meta: {title: 'animate'}},
-    {path: '/tk', component: tk, meta: {title: 'tk'}},
+    {path: '/tk/:questionPlanID', component: tk, meta: {title: 'tk'}},
     // 这个任意（其他）地址居然还和位置有关系
     {path: '*', redirect: '/tabs/home'}
   ]

@@ -1,7 +1,9 @@
 <template>
   <div id="roate">
-    <div class="box">
-      <v-rotate></v-rotate>
+    <div class="wrap">
+      <v-rotate>
+        <div class="box"></div>
+      </v-rotate>
     </div>
   </div>
 </template>
@@ -15,10 +17,14 @@
   };
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-  .box
+  .wrap
     width: 300px
     height: 400px
     background: #eee
     margin: 40px auto
     border: 4px solid #ccc
+    .box
+      width: 60px
+      height: 60px
+      background: red
 </style>

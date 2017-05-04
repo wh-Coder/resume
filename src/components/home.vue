@@ -6,7 +6,7 @@
     <hr/>
     <router-link to="/swiper">swpier</router-link>
     <hr/>
-    <router-link to="/tk">tttttkkkkk</router-link>
+    <router-link to="/tk/3088">tttttkkkkk</router-link>
     <hr/>
     <router-link to="/geometry">geometry</router-link>
     <hr/>
