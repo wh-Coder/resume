@@ -3,6 +3,7 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 var vuxLoader = require('vux-loader')
+var webpack = require('webpack')
 // 返回一个绝对路径
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -57,7 +58,16 @@ let webpackConfig = {
         }
       }
     ]
-  }
+  },
+
+  // 引入jquery
+  // plugins: [
+  //   new webpack.ProvidePlugin({
+  //     $: "jquery",
+  //     jquery: "jquery"
+  //   })
+  // ]
+  // 可以用zepto替代，由于zepto 没有使用模块用n-zepto
 }
 // vux官方指导的安装方式
 module.exports = vuxLoader.merge(webpackConfig, {

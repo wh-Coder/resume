@@ -12,12 +12,14 @@
     "animate.css": "^3.5.2",
     "axios": "^0.16.1",
     "fastclick": "^1.0.6",
+    "jquery": "^3.2.1",
     "vue": "^2.2.2",
     "vue-resource": "^1.2.1",
     "vue-router": "^2.2.0",
     "vue-touch": "^2.0.0-beta.4",
     "vuex": "^2.2.1",
-    "vux": "^2.2.0"
+    "vux": "^2.2.0",
+    "zepto": "^1.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
@@ -41,6 +43,7 @@
     "http-proxy-middleware": "^0.17.3",
     "less": "^2.7.2",
     "less-loader": "^4.0.2",
+    "n-zepto": "^1.2.0",
     "opn": "^4.0.2",
     "optimize-css-assets-webpack-plugin": "^1.3.0",
     "ora": "^1.1.0",
