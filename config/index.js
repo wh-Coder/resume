@@ -10,6 +10,7 @@ module.exports = {
     // assetsPublicPath: '/dist/',
     // https://rawgit.com/wh-Coder/resume/master/dist/index.html
     assetsPublicPath: '/wh-Coder/resume/master/dist/',
+
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
