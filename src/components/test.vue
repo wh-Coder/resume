@@ -3,25 +3,21 @@
     <h1>test -> {{count}}</h1>
     <input type="button" value="increase" @click="increase"/>
     <input type="button" value="decrease" @click="decrease"/>
-    <div class="wrap" >
-      <div class="box" ref="box"></div>
-    </div>
+    <drag :draggable="isdrag"></drag>
+    <input type="button" value="drag" @click="ondrag"/>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import {mapMutations, mapGetters} from 'vuex';
-//  import $ from 'zepto';
-  import '../plugin/transform'
-
+  import drag from './drag';
   export default {
     data() {
-      return {};
+      return {
+        isdrag: false
+      };
     },
-    components: {},
-    mounted() {
-        $(this.$refs.box).transform()
-    },
+    components: {drag},
     methods: {
       ...mapMutations([
         'increase'
@@ -32,6 +28,10 @@
           title: 'Vux is Cool',
           content: 'Do you agree?'
         })
+      },
+      ondrag() {
+        console.log('123');
+        this.isdrag = !this.isdrag
       }
     },
     computed: {
@@ -43,17 +43,4 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-  .wrap
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
-    background: #3BB3E0;
-    border: 4px solid #2561B4;
-    overflow: hidden;
-    .box
-      width: 100px;
-      height: 100px;
-      background-color: pink;
-      transform: rotate(30deg);
 </style>
